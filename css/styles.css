@@ -531,24 +531,28 @@ h2{
 
 .form{
     display: flex;
+    gap: 24px;
 }
 
 .email-input{
-    margin-right: 24px;
-    border: 1px solid #fff;
+    border: 1px solid #ffffff;
     border-radius: 4px;
     width: 264px;
     height: 40px;
     box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.15);
     background-color: transparent;
-    color: #fff;
-
+    color: #ffffff;
+    font-weight: 400;
+        font-size: 12px;
+        line-height: 2;
+        letter-spacing: 0.04em;
+        padding-left: 16px;
 }
 
 .subscribe-button {
     border-radius: 4px;
         padding: 8px 24px;
-        width: 165px;
+    min-width: 165px;
         height: 40px;
     background: #4d5ae5;
     border: none;
@@ -556,10 +560,14 @@ h2{
         font-size: 16px;
         line-height: 1.5;
         letter-spacing: 0.04em;
-        text-align: center;
-        color: #fff;
+        color: #ffffff;
     display: flex;
-    gap: 16px;
+    justify-content: center;
+    text-align: center;
+}
+
+.icon-send{
+    margin-left: 16px;
 }
 
 input::placeholder{
@@ -567,7 +575,7 @@ input::placeholder{
         font-size: 12px;
         line-height: 2;
         letter-spacing: 0.04em;
-        color: #fff;
+        color: #ffffff;
 }
 
 .backdrop {
@@ -576,13 +584,10 @@ input::placeholder{
     top: 0;
     width: 100%;
     height: 100%;
-
     opacity:0;
     visibility: hidden;
     pointer-events: none;
-
-    transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1);
-    visibility: 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1), visibility 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .backdrop:not(.is-open) .modal{
@@ -599,7 +604,7 @@ input::placeholder{
     box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.14), 0 1px 3px 0 rgba(0, 0, 0, 0.12), 0 2px 1px 0 rgba(0, 0, 0, 0.2);
     background-color: #fcfcfc;
     border-radius: 4px;
-    padding: 24px;
+    padding: 72px 24px 24px 24px; 
     width: 408px;
     min-height: 584px;
     position: absolute;
@@ -612,30 +617,36 @@ input::placeholder{
 .modal-button{
     width: 24px;
     height: 24px;
-    border: none;
-    border: 1px solid #8e8f99;
+    border: 1px solid rgba(0, 0, 0, 0.1);
     border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #e7e9fc;
+    padding: 0;
     position: absolute;
     top: 24px;
     right: 24px;
-    transition: fill background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1), border 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .exit-icon{
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+    transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .modal-button:hover{
     background-color: #404bbf;
     border: none;
-    fill: #e7e9fc;
+    fill: #ffffff;
+}
+
+.modal-button:focus {
+    background-color: #404bbf;
+    border: none;
+    fill: #ffffff;
 }
 
 .modal-text{
-    margin-top: 48px;
     text-align: center;
     font-weight: 500;
     font-size: 16px;
@@ -643,6 +654,7 @@ input::placeholder{
     letter-spacing: 0.02em;
     text-align: center;
     color: #2e2f42;
+    margin-bottom: 16px;
 }
 
 .modal-form {
@@ -655,11 +667,13 @@ input::placeholder{
 
 .modal-label {
     font-weight: 400;
-        font-size: 12px;
-        line-height: 1.16667;
-        letter-spacing: 0.04em;
-        color: #8e8f99;
-        cursor: pointer;
+    font-size: 12px;
+    line-height: 1.17;
+    letter-spacing: 0.04em;
+    color: #8e8f99;
+    cursor: pointer;
+    display: block;
+    margin-bottom: 4px;
 }
 
 .input-wrap {
@@ -672,15 +686,29 @@ input::placeholder{
     padding-left: 38px;
     border: 1px solid rgba(46, 47, 66, 0.4);
     border-radius: 4px;
-    outline: none;
-    margin-top: 4px;
+    background-color: transparent;
+    outline: transparent;
+    transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.modal-input:focus{
+    border-color: #4D5AE5;
 }
 
 .modal-input-icon {
     position: absolute;
     top: 50%;
-    left: 19px;
+    left: 16px;
     transform: translateY(-50%);
+    transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.modal-input:focus + svg{
+    fill: #4D5AE5;
+}
+
+.modal-field-textarea{
+    margin-bottom: 16px;
 }
 
 .comment-input{
@@ -690,8 +718,17 @@ input::placeholder{
     width: 100%;
     height: 120px;
     resize: none;
-    margin-top: 4px;
-    outline: none;
+    outline: transparent;
+    font-size: 12px;
+    line-height: 1.17;
+    letter-spacing: 0.04em;
+    color: rgba(46, 47, 66, 0.4);
+    background-color: transparent;
+    transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.comment-input:focus{
+    border-color: #4D5AE5;
 }
 
 .comment-input::placeholder{
@@ -702,10 +739,14 @@ input::placeholder{
         color: rgba(46, 47, 66, 0.4);
 }
 
+.modal-field-checkbox{
+    margin-bottom: 24px;
+}
+
 .modal-check-text {
     font-weight: 400;
     font-size: 12px;
-    line-height: 1.16667;
+    line-height: 1.17;
     letter-spacing: 0.04em;
     color: #8e8f99;
     display: flex;
@@ -719,10 +760,11 @@ input::placeholder{
     border-radius: 2px;
     border: 1px solid rgba(46, 47, 66, 0.4);
     margin-right: 8px;
-    display: flex;
+    display: inline-flex;
     align-items: center;
     justify-content: center;
     fill: transparent;
+    transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1), border 250ms cubic-bezier(0.4, 0, 0.2, 1), fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .modal-check:checked + .modal-check-text .modal-check-item{
@@ -731,10 +773,17 @@ input::placeholder{
     fill: #f4f4fd;
 }
 
+.privacy-policy {
+    line-height: 1.33333;
+    text-decoration: underline;
+    text-decoration-skip-ink: none;
+    color: #4d5ae5;
+}
+
 .send-button{
     border-radius: 4px;
         padding: 16px 32px;
-        width: 169px;
+    min-width: 169px;
         height: 56px;
     box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.15);
         background: #4d5ae5;
@@ -744,19 +793,14 @@ input::placeholder{
         line-height: 1.5;
         letter-spacing: 0.04em;
         text-align: center;
-        color: #fff;
+        color: #ffffff;
     display: block;
-    margin: 24px auto 0;
+    margin: auto;
+    transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .send-button:focus{
-    background: #404bbf;
+    background-color: #404bbf;
 }
 
-.privacy-policy{
-    line-height: 1.33333;
-        text-decoration: underline;
-        text-decoration-skip-ink: none;
-        color: #4d5ae5;
-}
 

@@ -353,19 +353,21 @@
         </div>
         <div class="footer-subscribe">
             <p class="footer-subscribe-text">Subscribe</p>
+            <label class="footer-label">
             <form class="form" name="subscribe_form" autocomplete="off">
-            <input class="email-input" type="email" name="email" placeholder="Email">
+            <input class="email-input" type="email" name="email" placeholder="E-mail">
             <button class="subscribe-button" type="submit">Subscribe
-                <svg class="icon" width="24" height="24">
+                <svg class="icon-send" width="24" height="24">
                     <use href="./images/icons.svg#icon-icon-send"></use>
                 </svg>
             </button>
+            </label>
             </form>
         </div>
         </div>
     </footer>
 
-    <div class="backdrop">
+    <div class="backdrop is-open">
         <div class="modal">
             <button class="modal-button" type="button">
                 <svg class="exit-icon" width="8" height="8">
@@ -378,7 +380,7 @@
                     <label class="modal-label" for="user-name">Name</label>
                         <div class="input-wrap">
                             <input type="text" class="modal-input" name="user-name" id="user-name">
-                                <svg class="modal-input-icon" width="12" height="12">
+                                <svg class="modal-input-icon" width="18" height="24">
                                     <use href="./images/icons.svg#icon-user"></use>
                                 </svg>
                         </div>
@@ -387,7 +389,7 @@
                     <label class="modal-label" for="user-phone">Phone</label>
                     <div class="input-wrap">
                         <input type="tel" class="modal-input" name="user-phone" id="user-phone">
-                        <svg class="modal-input-icon" width="13" height="13">
+                        <svg class="modal-input-icon" width="18" height="24">
                             <use href="./images/icons.svg#icon-telephone"></use>
                         </svg>
                     </div>
@@ -396,21 +398,23 @@
                     <label class="modal-label" for="user-email">Email</label>
                     <div class="input-wrap">
                         <input type="email" class="modal-input" name="user-email" id="user-email">
-                        <svg class="modal-input-icon" width="15" height="12">
+                        <svg class="modal-input-icon" width="18" height="24">
                             <use href="./images/icons.svg#icon-email"></use>
                         </svg>
                     </div>
                 </div>
-                <div class="modal-field">
+                <div class="modal-field-textarea">
                     <label class="modal-label" for="user-comment">Comment</label>
-                        <textarea class="comment-input" name="comment" id="user-comment" placeholder="Text input"></textarea>
+                        <textarea class="comment-input" name="user-comment" id="user-comment" placeholder="Text input"></textarea>
                 </div>
-                <input type="checkbox" name="policy" id="policy" class="modal-check visually-hidden" value="true">
-                <label for="policy" class="modal-check-text"><span class="modal-check-item">
+                <div class="modal-field-checkbox">
+                <input type="checkbox" name="user-privacy" id="user-privacy" class="modal-check visually-hidden" value="true">
+                <label for="user-privacy" class="modal-check-text"><span class="modal-check-item">
                     <svg class="check-icon" width="10" height="8">
                         <use href="./images/icons.svg#check-icon"></use>
                     </svg>
                 </span>I accept the terms and conditions of the <a class="privacy-policy" href="">Privacy Policy</a></label>
+                </div>
                 <button class="send-button" type="submit">Send</button>
             </form>
         </div>
