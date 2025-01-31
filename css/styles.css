@@ -702,8 +702,6 @@ input::placeholder{
         color: rgba(46, 47, 66, 0.4);
 }
 
-.modal-check {}
-
 .modal-check-text {
     font-weight: 400;
     font-size: 12px;
